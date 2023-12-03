@@ -1,0 +1,24 @@
+struct GCDUsageView: View {
+    
+    @ObservedObject private var model = GCDUsage()
+    
+    var body: some View {
+        VStack(spacing: 50) {
+            Button("addWorkItem") {
+                model.addWorkItem()
+            }
+            Button("useDispatchGroup") {
+                model.useDispatchGroup()
+            }
+            Button("useSemaphore") {
+                model.useSemaphore()
+            }
+        }
+    }
+}
+
+struct GCDUsage_Previews: PreviewProvider {
+    static var previews: some View {
+        GCDUsageView()
+    }
+}
